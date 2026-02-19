@@ -1,0 +1,112 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Background: White */
+  --background: oklch(1 0 0);
+  /* Headings: #1A1A1A */
+  --foreground: oklch(0.157 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.157 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.157 0 0);
+  /* Dark UI: #222222 */
+  --primary: oklch(0.199 0 0);
+  --primary-foreground: oklch(1 0 0);
+  /* Light section background: White */
+  --secondary: oklch(0.98 0 0);
+  --secondary-foreground: oklch(0.157 0 0);
+  /* Light section background */
+  --muted: oklch(0.98 0 0);
+  /* Body text: #7A7A7A */
+  --muted-foreground: oklch(0.545 0 0);
+  /* Accent: #C6B9A3 - warm taupe */
+  --accent: oklch(0.784 0.028 75);
+  --accent-foreground: oklch(0.157 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.905 0 0);
+  --input: oklch(0.905 0 0);
+  --ring: oklch(0.784 0.028 75);
+  --radius: 0.25rem;
+
+  /* Custom architectural tokens */
+  --heading: oklch(0.157 0 0);
+  --body: oklch(0.545 0 0);
+  --dark-ui: oklch(0.199 0 0);
+  /* Sage background: #B1BDB2 */
+  --light-bg: oklch(0.74 0.015 145);
+  /* White-toned section background: #FAFAFA */
+  --white-tone: oklch(0.985 0.002 90);
+  --warm-accent: oklch(0.784 0.028 75);
+  
+  /* Sage section text colors - darker for readability on #B1BDB2 */
+  --sage-heading: oklch(0.12 0 0);
+  --sage-body: oklch(0.35 0 0);
+  /* Soft white tone for labels on sage background */
+  --soft-white: oklch(0.92 0.005 90);
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --color-heading: var(--heading);
+  --color-body: var(--body);
+  --color-dark-ui: var(--dark-ui);
+  --color-light-bg: var(--light-bg);
+  --color-white-tone: var(--white-tone);
+  --color-warm-accent: var(--warm-accent);
+  --color-sage-heading: var(--sage-heading);
+  --color-sage-body: var(--sage-body);
+  --color-soft-white: var(--soft-white);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-heading;
+  }
+}
+
+@layer utilities {
+  .text-sage-heading {
+    color: var(--sage-heading);
+  }
+  .text-sage-body {
+    color: var(--sage-body);
+  }
+  .text-soft-white {
+    color: var(--soft-white);
+  }
+}
